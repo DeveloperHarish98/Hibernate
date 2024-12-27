@@ -1,170 +1,112 @@
-# Hibernate
-Student Bank Application Documentation
-Overview
-The Student Bank Application is a simple Java-based system that simulates basic banking operations such as account creation, modification, deletion, balance checks, and money transactions (deposit/withdrawal). This application uses Hibernate ORM for database management and MySQL as the database system. The user interacts with the system through a command-line interface (CLI).
+# **Student Bank Application Documentation**  
 
-Technologies Used
-Java: The core programming language for implementing the application logic.
-Hibernate: ORM framework used for database interactions.
-MySQL: Relational database system used to store account information.
-Eclipse IDE: Development environment used for writing and managing the code.
-JDBC: Database connectivity used through Hibernate.
-Spring Boot (optional): Can be used to simplify the configuration for the application.
-Project Structure
-1. AccountDTO22 (DTO - Data Transfer Object)
-This class represents the data structure for a bank account. It contains the following properties:
+## **Overview**  
+The Student Bank Application is a Java-based system that simulates basic banking operations, including account creation, modification, deletion, balance checks, and transactions (deposit/withdrawal). It uses Hibernate ORM for database management and MySQL as the database system. Users interact via a command-line interface (CLI).  
 
-AccNumber: The unique account number.
-Balance: The current balance of the account.
-Name: The name of the account holder.
-PhoneNumber: The phone number associated with the account.
-It also includes getters and setters for all these properties, which allow interaction with the account data.
+## **Technologies Used**  
+- **Java**: Core programming language for application logic.  
+- **Hibernate**: ORM framework for database interactions.  
+- **MySQL**: Relational database for storing account data.  
+- **Eclipse IDE**: IDE used for development and code management.  
+- **JDBC**: Database connectivity implemented via Hibernate.  
+- **Spring Boot (Optional)**: Simplifies configurations if integrated.  
 
-2. BankDAO22 (DAO - Data Access Object)
-The BankDAO22 class handles all database-related operations using Hibernate. It includes methods to:
+---
 
-Insert Account Details: Create a new bank account.
-Delete Account: Remove an existing bank account from the system.
-Modify Account: Change details like the account holder's name or phone number.
-Read Account: Retrieve details of an existing account.
-Money Transaction: Perform deposit or withdrawal operations on an account.
-This class uses Hibernate's Session and Transaction objects to interact with the MySQL database and persist data.
+## **Project Structure**  
 
-3. App (Main Application)
-The App class serves as the entry point of the application. It provides a command-line interface for the user to perform various banking operations. The options provided to the user are:
+### **1. AccountDTO22 (DTO - Data Transfer Object)**  
+Represents bank account data with the following properties:  
+- **AccNumber**: Unique account number.  
+- **Balance**: Current balance.  
+- **Name**: Account holder’s name.  
+- **PhoneNumber**: Associated phone number.  
+Includes **getters** and **setters** for interaction.  
 
-Create New Bank Account
-Delete Account
-Modify Account
-Check Account Details
-Money Transactions (Deposit or Withdraw)
-Exit: Exit the application.
-The App class interacts with the BankDAO22 class to execute the appropriate banking operations based on the user's choice.
+### **2. BankDAO22 (DAO - Data Access Object)**  
+Handles database operations via Hibernate:  
+- **Insert Account**: Create a new account.  
+- **Delete Account**: Remove an account.  
+- **Modify Account**: Update details (name, phone).  
+- **Read Account**: Retrieve account details.  
+- **Money Transaction**: Deposit or withdraw money.  
 
-Setup Instructions
-1. Install MySQL
-Ensure that MySQL is installed on your system. Create a new database named StudentBank to store account information.
+Uses **Session** and **Transaction** objects to manage persistence.  
 
-2. Set Up Hibernate
-Hibernate is configured through the hibernate.cfg.xml file. You need to update the file with your MySQL credentials (username, password) and the correct database URL.
+### **3. App (Main Application)**  
+Provides a command-line interface for user actions:  
+- **Create Account**  
+- **Delete Account**  
+- **Modify Account**  
+- **Check Details**  
+- **Deposit/Withdraw Money**  
+- **Exit Application**  
 
-3. Configure the Project
-Import the project into your IDE (e.g., Eclipse).
-Ensure the required Hibernate dependencies are included in your project.
-4. Database Schema
-Hibernate will automatically generate the necessary database tables based on the mapping configurations. Ensure that the hbm2ddl.auto property is set to update in the Hibernate configuration file.
+Interacts with BankDAO22 to execute user-selected operations.  
 
-Usage
-Running the Application
-Launch the App class to start the application.
-The following options will appear in the console:
-Create New Bank Account: Input the account number, name, phone number, and initial balance to create a new account.
-Delete Account: Input the account number to delete an existing account.
-Modify Account: Modify the name or phone number of an existing account.
-Check Account Details: Retrieve account details like name, phone number, and balance.
-Money Transaction: Perform deposit or withdrawal operations on an account.
-Exit: Exit the program.
-Database Interaction
-The application uses Hibernate ORM to perform CRUD operations (Create, Read, Update, Delete) on the MySQL database.
+---
 
-Hibernate Configuration
-hibernate.cfg.xml
-This file contains configuration settings for Hibernate, such as the database connection properties, dialect, and the mapping resource (Account.hbm.xml) for the AccountDTO22 class.
+## **Setup Instructions**  
 
-Account.hbm.xml
-This XML file provides the Hibernate mapping between the AccountDTO22 class and the corresponding database table. It defines the fields and their mappings.
+### **1. Install MySQL**  
+Ensure MySQL is installed. Create a database named **StudentBank**.  
 
-Known Issues
-Database Connectivity: Ensure the MySQL server is running and accessible for database operations.
-Input Validation: The application does not perform extensive input validation. Be cautious of invalid inputs (e.g., incorrect account numbers or names).
-Contributing# Hibernate
-Student Bank Application Documentation
-Overview
-The Student Bank Application is a simple Java-based system that simulates basic banking operations such as account creation, modification, deletion, balance checks, and money transactions (deposit/withdrawal). This application uses Hibernate ORM for database management and MySQL as the database system. The user interacts with the system through a command-line interface (CLI).
+### **2. Set Up Hibernate**  
+Edit **hibernate.cfg.xml** with MySQL credentials (username, password) and database URL.  
 
-Technologies Used
-Java: The core programming language for implementing the application logic.
-Hibernate: ORM framework used for database interactions.
-MySQL: Relational database system used to store account information.
-Eclipse IDE: Development environment used for writing and managing the code.
-JDBC: Database connectivity used through Hibernate.
-Spring Boot (optional): Can be used to simplify the configuration for the application.
-Project Structure
-1. AccountDTO22 (DTO - Data Transfer Object)
-This class represents the data structure for a bank account. It contains the following properties:
+### **3. Configure Project**  
+- Import the project into Eclipse IDE.  
+- Add required Hibernate dependencies.  
 
-AccNumber: The unique account number.
-Balance: The current balance of the account.
-Name: The name of the account holder.
-PhoneNumber: The phone number associated with the account.
-It also includes getters and setters for all these properties, which allow interaction with the account data.
+### **4. Database Schema**  
+Hibernate auto-generates database tables based on configuration mappings.  
+Set **hbm2ddl.auto** to **update** in **hibernate.cfg.xml**.  
 
-2. BankDAO22 (DAO - Data Access Object)
-The BankDAO22 class handles all database-related operations using Hibernate. It includes methods to:
+---
 
-Insert Account Details: Create a new bank account.
-Delete Account: Remove an existing bank account from the system.
-Modify Account: Change details like the account holder's name or phone number.
-Read Account: Retrieve details of an existing account.
-Money Transaction: Perform deposit or withdrawal operations on an account.
-This class uses Hibernate's Session and Transaction objects to interact with the MySQL database and persist data.
+## **Usage**  
 
-3. App (Main Application)
-The App class serves as the entry point of the application. It provides a command-line interface for the user to perform various banking operations. The options provided to the user are:
+### **Running the Application**  
+Run the **App** class to launch the CLI. Options include:  
+- **Create New Account**: Enter account number, name, phone number, and balance.  
+- **Delete Account**: Enter account number to delete.  
+- **Modify Account**: Update name or phone number.  
+- **Check Details**: View account information.  
+- **Money Transactions**: Deposit or withdraw funds.  
+- **Exit Program**: Close the application.  
 
-Create New Bank Account
-Delete Account
-Modify Account
-Check Account Details
-Money Transactions (Deposit or Withdraw)
-Exit: Exit the application.
-The App class interacts with the BankDAO22 class to execute the appropriate banking operations based on the user's choice.
+### **Database Interaction**  
+CRUD operations (Create, Read, Update, Delete) are performed through Hibernate ORM.  
 
-Setup Instructions
-1. Install MySQL
-Ensure that MySQL is installed on your system. Create a new database named StudentBank to store account information.
+---
 
-2. Set Up Hibernate
-Hibernate is configured through the hibernate.cfg.xml file. You need to update the file with your MySQL credentials (username, password) and the correct database URL.
+## **Hibernate Configuration**  
 
-3. Configure the Project
-Import the project into your IDE (e.g., Eclipse).
-Ensure the required Hibernate dependencies are included in your project.
-4. Database Schema
-Hibernate will automatically generate the necessary database tables based on the mapping configurations. Ensure that the hbm2ddl.auto property is set to update in the Hibernate configuration file.
+### **hibernate.cfg.xml**  
+Configures Hibernate properties, including:  
+- **Database Connection**: URL, username, password.  
+- **Dialect**: MySQL dialect.  
+- **Mappings**: Links to **Account.hbm.xml**.  
 
-Usage
-Running the Application
-Launch the App class to start the application.
-The following options will appear in the console:
-Create New Bank Account: Input the account number, name, phone number, and initial balance to create a new account.
-Delete Account: Input the account number to delete an existing account.
-Modify Account: Modify the name or phone number of an existing account.
-Check Account Details: Retrieve account details like name, phone number, and balance.
-Money Transaction: Perform deposit or withdrawal operations on an account.
-Exit: Exit the program.
-Database Interaction
-The application uses Hibernate ORM to perform CRUD operations (Create, Read, Update, Delete) on the MySQL database.
+### **Account.hbm.xml**  
+Maps **AccountDTO22** class properties to the database table fields.  
 
-Hibernate Configuration
-hibernate.cfg.xml
-This file contains configuration settings for Hibernate, such as the database connection properties, dialect, and the mapping resource (Account.hbm.xml) for the AccountDTO22 class.
+---
 
-Account.hbm.xml
-This XML file provides the Hibernate mapping between the AccountDTO22 class and the corresponding database table. It defines the fields and their mappings.
+## **Known Issues**  
 
-Known Issues
-Database Connectivity: Ensure the MySQL server is running and accessible for database operations.
-Input Validation: The application does not perform extensive input validation. Be cautious of invalid inputs (e.g., incorrect account numbers or names).
-Contributing
-If you would like to contribute to this project:
+### **1. Database Connectivity**  
+Ensure the MySQL server is running and reachable.  
 
-Fork the repository.
-Create a new branch for your changes.
-Submit a pull request with a clear description of your modifications.
+### **2. Input Validation**  
+Minimal validation is implemented. Avoid invalid entries (e.g., incorrect account numbers).  
 
-If you would like to contribute to this project:
+---
 
-Fork the repository.
-Create a new branch for your changes.
-Submit a pull request with a clear description of your modifications.
+## **Contributing**  
+Contributions are welcome!  
+
+### **Steps to Contribute**:  
+1. **Fork the repository.**  
+2. **Create a new branch.**  
+3. **Submit a pull request** 
